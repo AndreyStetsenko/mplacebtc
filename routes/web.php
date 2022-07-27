@@ -46,7 +46,7 @@ Route::middleware('loggedin')->group(function() {
     Route::post('register', [AuthController::class, 'register'])->name('register.store');
 });
 
-Route::prefix('dashboard')->group(function() {
+Route::middleware('auth')->prefix('dashboard')->group(function() {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [PageController::class, 'dashboardOverview1'])->name('dashboard');
 

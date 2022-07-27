@@ -28,7 +28,7 @@
                             </li>
                         </ul>
                         <!-- mainmenu close -->
-                        @if ( !Auth::user()->name )
+                        @if ( !auth()->user() )
                         <div class="menu_side_area">
                             <a href="03_grey-wallet.html" class="btn-main btn-wallet"><i class="icon_wallet_alt"></i><span>Login</span></a>
                             <span id="menu-btn"></span>
@@ -125,7 +125,7 @@
                                     <ul class="de-submenu-profile">
                                         <li><a href="{{ route('author', auth()->user()->id) }}"><i class="fa fa-user"></i> My profile</a>
                                         <li><a href="{{ route('account.home') }}"><i class="fa fa-pencil"></i> Edit profile</a>
-                                        <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a>
+                                        <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Sign out</a>
                                     </ul>
                                 </div>
                                 <span id="menu-btn"></span>
