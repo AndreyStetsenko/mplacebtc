@@ -150,6 +150,6 @@ Route::get('author/{id}', [Author::class, 'index'])->name('author');
 Route::get('products', [UserProducts::class, 'index'])->name('products');
 Route::get('product/{id}', [UserProduct::class, 'index'])->name('product');
 
-Route::prefix('account')->group(function() {
+Route::middleware('auth')->prefix('account')->group(function() {
     Route::get('/', [AccountHome::class, 'index'])->name('account.home');
 });

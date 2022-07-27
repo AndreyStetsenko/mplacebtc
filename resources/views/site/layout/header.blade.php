@@ -30,7 +30,7 @@
                         <!-- mainmenu close -->
                         @if ( !auth()->user() )
                         <div class="menu_side_area">
-                            <a href="03_grey-wallet.html" class="btn-main btn-wallet"><i class="icon_wallet_alt"></i><span>Login</span></a>
+                            <a href="{{ route('login.index') }}" class="btn-main btn-wallet"><i class="icon_wallet_alt"></i><span>Login</span></a>
                             <span id="menu-btn"></span>
                         </div>
                         @else
